@@ -28,12 +28,16 @@ class App extends React.Component {
     const json = response && <ReactJson src={response} />
     return (
       <div className="App">
-        <label>
-          hash:
-          <input type="text" value={this.state.input} onChange={this.handleChange} />
-        </label>
-        <button onClick={this.loadData}>load data</button>
-        {json}
+        <div className="left">
+          <textarea type="text" value={this.state.input} onChange={this.handleChange} className="fullsize" />
+
+        </div>
+        <div className="center">
+          <button className="button" onClick={this.loadData}>Decode</button>
+        </div>
+        <div className="right">
+          {json}
+        </div>
       </div>
     );
   }
